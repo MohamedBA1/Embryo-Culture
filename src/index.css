@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-arabic: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+    --color-brand-teal: #153C3C;
+    --color-brand-teal-dark: #0D2626;
+    --color-brand-teal-light: #1E4F4F;
+    --color-brand-green: #358245;
+    --color-brand-green-hover: #2D723B;
+    --color-brand-green-light: #EBF4EE;
+    --color-brand-sand: #FAFDFB;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  html[dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+}
+
+/* Custom Botanical Keyframe Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes driftSlow {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(12px, -15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: driftSlow 10s ease-in-out infinite;
+}
+
+/* Glassmorphism utilities */
+.glass-teal {
+  background: rgba(21, 60, 60, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(21, 60, 60, 0.08);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFDFB;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1E0D6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #358245;
+}
